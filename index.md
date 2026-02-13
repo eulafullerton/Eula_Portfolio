@@ -7,7 +7,9 @@ I apply statistical modeling and machine learning to real-world datasets to unco
 
 ## About
 
-I am a data science graduate student at Bellevue University and a Medical Laboratory Scientist with five years of experience in clinical environments. Working in high-impact healthcare settings has shaped my interest in using data to better understand risk, improve outcomes, and inform policy and operational decisions.
+I am a data science graduate student at Bellevue University and a Medical Laboratory Scientist with five years of experience in clinical environments. Working in high-impact healthcare settings has shaped my interest in using data to understand risk better, improve outcomes, and inform operational decision-making.
+
+Through my academic and applied projects, I focus on predictive modeling, exploratory analysis, and ethical data integration. I am particularly interested in leveraging statistical methods and machine learning to address complex, real-world problems where data-driven insight can meaningfully improve outcomes.
 
 My portfolio reflects a strong emphasis on:
 
