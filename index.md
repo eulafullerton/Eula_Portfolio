@@ -24,45 +24,50 @@ My portfolio reflects a strong emphasis on:
 
 ## Work / Projects
 
-### Predicting NICU Length of Stay  
-Developed regression and machine learning models to estimate Neonatal Intensive Care Unit (NICU) length of stay using admission clinical and demographic variables.  
+### Predicting NICU Length of Stay
+Regression modeling using Linear Regression, Gradient Boosting, and XGBoost to predict NICU length of stay from admission clinical data.
+
 [View project →](projects/nicu-length-of-stay/)
 
-### Global Disaster Preparedness  
-Predictive modeling of disaster severity and human and economic losses using historical global data.  
-[View project →](projects/global-disaster-preparedness/)
+### Predicting Migraine Type from Symptoms
+Multi-class machine learning classification using Logistic Regression, Random Forest, and XGBoost with SMOTE to handle class imbalance.
 
-### Predicting Employment Status Among Foreign-Born Individuals  
-Logistic regression analysis using American Community Survey data to identify demographic and socioeconomic predictors of employment outcomes among foreign-born individuals in the United States.  
-[View project →](projects/foreign-born-employment/)
-
-### Motorcycle Accident Risk Analysis (California)  
-Large-scale traffic data analysis identifying demographic and temporal risk factors associated with accident severity.  
-[View project →](projects/motorcycle-accident-risk-analysis/)
-
-### Maternal Health Risk Prediction  
-Predictive modeling project identifying maternal health risk factors using clinical and demographic variables.  
-[View project →](projects/maternal-health-risk-prediction/)
-
-### Predicting Migraine Type from Symptoms  
-Machine learning classification of migraine types using symptom-based features and model evaluation techniques.  
 [View project →](projects/predicting-migraine-type/)
 
-### Maternal Drug Exposure & Pregnancy Outcomes  
-Integration of CDC and OpenFDA data to examine medication exposure during pregnancy and associated outcome patterns.  
-[View project →](projects/maternal-drug-exposure-pregnancy-outcomes/)
+### Maternal Health Risk Prediction
+Classification models predicting pregnancy risk levels using physiological indicators such as blood glucose, blood pressure, and maternal age.
 
-### Global Mental Health Disorder Trends  
-Cross-country statistical analysis comparing mental health disorder prevalence and global trends.  
+[View project →](projects/maternal-health-risk-prediction/)
+
+### Predicting Employment Status Among Foreign-Born Individuals
+Logistic regression modeling using American Community Survey microdata to analyze demographic predictors of employment.
+
+[View project →](projects/foreign-born-employment/)
+
+### Motorcycle Accident Risk Analysis
+Large-scale traffic collision analysis using multi-source datasets to examine demographic and environmental risk factors for motorcycle accidents.
+
+[View project →](projects/motorcycle-accident-risk-analysis/)
+
+### Global Mental Health Disorder Trends
+Statistical and distribution analysis comparing mental health disorder prevalence across countries.
+
 [View project →](projects/mental-health-disorder-trends/)
 
-### Childcare Cost Burden Analysis  
-Exploratory analysis examining childcare affordability relative to household income benchmarks.  
+### Childcare Cost Burden on Single Mothers
+Power BI dashboard and policy analysis examining childcare affordability relative to income across U.S. counties.
+
 [View project →](projects/childcare-cost-burden/)
 
-### TSA Complaint Data Analysis  
-Exploratory analysis of TSA passenger complaint data identifying trends across complaint categories and time periods.  
-[View project →](projects/tsa-complaint-data/)
+### Maternal Drug Exposure & Pregnancy Outcomes
+Data integration project combining CDC natality data and OpenFDA API data to analyze medication exposure patterns during pregnancy.
+
+[View project →](projects/maternal-drug-exposure/)
+
+### TSA Complaint Data Analysis
+Exploratory data analysis and visualization identifying patterns in passenger complaints submitted to the Transportation Security Administration.
+
+[View project →](projects/tsa-complaint-analysis/)
 
 ---
 
