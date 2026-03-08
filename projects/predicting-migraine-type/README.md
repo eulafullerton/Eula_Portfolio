@@ -3,50 +3,69 @@
 **Skills:** Machine Learning | Classification | SMOTE | Model Comparison | Healthcare Analytics
 
 ## Overview
-Migraines affect more than one billion people worldwide and are frequently misdiagnosed or undertreated. This project explores whether machine learning models can classify migraine types using patient symptom patterns and demographic characteristics.
+Migraines affect over one billion people worldwide and are a leading cause of disability. However, migraines are frequently underdiagnosed or misclassified, which can lead to ineffective treatment. This project explores whether machine learning models can accurately classify migraine types using patient characteristics and associated neurological symptoms.
 
 ## Dataset
-The dataset contains **400 patient records with 23 features** describing migraine symptoms and episode characteristics.
+The dataset was sourced from Kaggle and contains **400 patient records with 23 features** describing migraine characteristics and symptoms.
 
 Key variables include:
 
 - Age
-- Attack duration
+- Migraine duration
 - Attack frequency
-- Pain intensity
+- Pain intensity and location
 - Associated symptoms such as nausea, photophobia, and phonophobia
-- Neurological symptoms such as vertigo and visual disturbances
+- Neurological symptoms including vertigo, tinnitus, and visual disturbances
 
 The target variable was **Migraine Type**, consisting of seven migraine categories.
 
+## Data Preparation
+Data preprocessing included:
+
+- Removing duplicate records
+- Encoding migraine type labels using LabelEncoder
+- Standardizing numerical variables (age, intensity, duration, frequency)
+- Handling class imbalance using **SMOTE**
+- Splitting the dataset using **stratified 80/20 train-test sampling**
+
 ## Methods
-Three classification models were evaluated:
+Three supervised machine learning models were evaluated:
 
 - Logistic Regression
 - Random Forest
 - XGBoost
 
-Preprocessing included:
-
-- Removing duplicates
-- Label encoding migraine type
-- Standardizing numerical features
-- Applying **SMOTE** to address class imbalance
-- Stratified 80/20 train-test split
-
-Performance metrics included:
+Model performance was compared using:
 
 - Accuracy
-- Macro and weighted F1-score
-- ROC-AUC
+- Macro and weighted **F1-score**
+- ROC-AUC scores
+- Confusion matrices
 
-## Key Findings
-Tree-based models significantly outperformed logistic regression.
+Because the dataset contained class imbalance, macro F1-score was used to evaluate model performance across all migraine categories.
 
-| Model | Accuracy |
-|------|------|
-| Logistic Regression | 80% |
-| Random Forest | 90% |
-| XGBoost | **91%** |
+## Results
 
-Important predictors included migraine intensity, attack duration, frequency, nausea, and visual disturbances.
+| Model | Accuracy | Macro F1 |
+|------|------|------|
+| Logistic Regression | 80% | 0.76 |
+| Random Forest | 90% | 0.80 |
+| XGBoost | **91%** | **0.84** |
+
+Tree-based models significantly improved classification performance compared to logistic regression. **XGBoost achieved the best overall performance and demonstrated strong ability to identify minority migraine classes.**
+
+Feature importance analysis from the Random Forest model identified key predictors including:
+
+- Migraine intensity
+- Attack duration
+- Attack frequency
+- Visual disturbances
+- Nausea
+
+These predictors align closely with clinical migraine symptom patterns.
+
+## Key Takeaway
+Machine learning models can effectively classify migraine types based on symptom patterns. XGBoost provided the strongest performance, suggesting that ensemble models are well suited for multi-class clinical classification tasks.
+
+## Tools
+Python, pandas, scikit-learn, XGBoost, SMOTE, matplotlib
