@@ -2,23 +2,24 @@
 
 **Skills:** Machine Learning | Regression Modeling | Healthcare Analytics | Feature Engineering | Model Evaluation
 
+
 ## Overview
-Neonatal Intensive Care Unit (NICU) length of stay (LOS) directly affects hospital capacity planning, staffing allocation, and patient care coordination. This project evaluates whether clinical and demographic variables available at NICU admission can be used to predict length of stay using supervised machine learning models.
+This project investigates whether clinical and demographic variables available at NICU admission can be used to predict neonatal length of stay (LOS). Accurate LOS predictions could help hospitals anticipate bed utilization, staffing needs, and operational planning in neonatal intensive care units.
 
 ## Dataset
-The analysis uses the **Neonatal Sepsis Care dataset**, containing clinical and demographic indicators recorded at NICU admission.
+The dataset used was the Neonatal Sepsis Care dataset containing neonatal clinical and demographic information collected at NICU admission.
 
-Key variables include:
+Key variables included:
 
-- Gestational age
 - Birth weight
+- Gestational age
 - Sex
 - Delivery mode
 - Maternal health indicators
 - Apgar score
-- Clinical symptoms such as respiratory distress
+- Clinical symptoms such as respiratory distress and fever
 
-The target variable was **length_of_stay_days**.
+The target variable was **length of stay in days**.
 
 ## Methods
 Three regression models were evaluated:
@@ -29,22 +30,27 @@ Three regression models were evaluated:
 
 Data preparation included:
 
-- One-hot encoding categorical variables
-- Log transformation of LOS to reduce skewness
+- One-hot encoding of categorical variables
+- Log transformation of the LOS variable to reduce skewness
 - Train/test split (80/20)
 
-Model performance was evaluated using:
+Models were evaluated using:
 
 - Mean Absolute Error (MAE)
 - Root Mean Squared Error (RMSE)
-- R²
+- R² score
 
-## Key Findings
-Models predicted LOS within roughly **4 days of actual stay**, but negative R² values indicated limited explanatory power. The most influential predictors included:
+## Results
+All models produced similar performance with an average prediction error of approximately **4 days**. However, negative R² values indicated that admission-only variables did not capture enough information to explain variation in NICU length of stay.
+
+Feature importance analysis showed that:
 
 - Gestational age
 - Birth weight
 - Severity classification
 - Admission temperature
 
-These results suggest that **post-admission clinical progression likely plays a larger role in determining NICU length of stay than admission variables alone.**
+were the most influential predictors.
+
+## Tools
+Python, pandas, scikit-learn, XGBoost, matplotlib
