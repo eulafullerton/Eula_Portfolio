@@ -1,0 +1,331 @@
+---
+title: "Final Project Step 2"
+author: "Eula Fullerton"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+# Step 1
+
+## Introduction
+
+As a night-shift medical laboratory scientist, I frequently encounter a high number of code traumas resulting from motorcycle accidents. This exposure has sparked my interest in researching the underlying causes of these accidents and identifying avoidable patterns that could enhance motorcycle safety. Understanding the factors contributing to motorcycle accidents is crucial for developing preventive measures and informing policy decisions, ultimately leading to safer roads. This research involves analyzing large data sets to uncover patterns and correlations that are not immediately apparent, making it a significant data science problem.
+
+In California, transportation accidents are the second leading cause of death for individuals under the age of 45, accounting for an average of 4,018 deaths per year. Addressing the problem of motorcycle accidents is essential to reducing this statistic. In this study, I analyze various data sets from California and create visualizations to compare:
+
+-   Motorcycle accidents involving male and female riders.
+-   The severity of motorcycle accidents.
+-   The frequency and timing of motorcycle accidents.
+-   Age-related trends in motorcycle accidents.
+-   Motorcycle accidents compared to other types of road accidents.
+
+By examining these factors, this research aims to uncover critical insights that can inform targeted interventions and improve motorcycle safety in California.
+
+## Research Questions
+
+1.  How often do motorcycle accidents lead to fatal consequences?
+2.  Are there certain times (days, times of day) when motorcycle accidents are more likely to occur?
+3.  Does age influence the likelihood of motorcycle accidents?
+4.  Is there a difference in accident rates between male and female motorcyclists?
+5.  How do motorcycle accidents compare to other road accidents involving different modes of transport?
+
+## Approach
+
+This study will involve data collection, data cleaning, exploratory data analysis (EDA), and advanced statistical analysis of public data from three data sets. The methodology is designed to uncover patterns and correlations in motorcycle accidents and to develop predictive models for identifying high-risk situations. The approach of the study is listed below:
+
+1.  **Data Collection**: Gather relevant data from public sources, including accident reports, traffic records, and demographic information.
+
+2.  **Data Cleaning**: Ensure data consistency and accuracy by addressing missing values, correcting inconsistencies, and standardizing data formats while focusing on ethical considerations.
+
+3.  **Exploratory Data Analysis (EDA)**: Conduct initial analyses to understand the basic characteristics of the data. This includes creating visualizations and summary statistics to identify trends and patterns.
+
+4.  **Advanced Analysis**: Perform in-depth statistical analyses to uncover more complex relationships and correlations within the data to explore the following areas:
+
+-   *Gender-Based Analysis*: Calculate and compare the likelihood of accidents involving female riders and male riders.
+
+-   *Severity Analysis*: Examine the relationship between the severity of accidents and various contributing factors.
+
+-   *Temporal Analysis*: Analyze the frequency of motorcycle accidents over time (daily, weekly, and monthly trends).
+
+-   *Age-Related Trends*: Investigate the age distribution of riders involved in accidents and compare accident rates across different age groups.
+
+-   *Comparative Analysis*: Compare the frequency and characteristics of motorcycle accidents with other types of transportation accidents
+
+5.  **Model Development**: Develop statistical models to identify significant factors contributing to motorcycle accidents. Create predictive models to assess high-risk situations and suggest preventive measures.
+
+## Data
+
+[Dataset 1](https://www.kaggle.com/datasets/alexgude/california-traffic-collision-data-from-switrs):
+
+This dataset from Kaggle includes California Traffic Collision Data, featuring three main tables. Incorporated in the data set are:
+
+-   Collision data (location and circumstances of accidents)
+-   Vehicle data (details of vehicles involved)
+-   Party data (information on individuals involved, including age, sex, and sobriety)
+-   Injury data (types of injuries sustained)
+
+The data covers collisions from January 1st, 2001 until mid-December, 2020. It is a large data set with collisions and victims having 9.42 million rows, parties having 18.7 million rows. The file form is sqlite, therefore necessary libraries will be required for downloading and cleaning.
+
+[Dataset 2](https://catalog.data.gov/dataset/road-traffic-injuries-0935b):
+
+This dataset provides annual statistics on fatal and severe road traffic injuries across various modes of transport, including:
+
+-   Motorcycles
+-   Bicycles
+-   Cars and pickups
+-   Buses
+-   Pedestrians
+-   Trucks
+
+It also details the severity of these injuries (fatal, severe). The road traffic injuries data is compiled from 2002-2010 and the data set has 449850 rows and 31 columns. The data file format is excel.
+
+[Dataset 3](https://www.bts.gov/content/transportation-accidents-mode):
+
+This motor vehicle crash data is from the U.S Department of transportation. It includes data from 1988 to 2022 for police reported-crashes in the United States. It includes some missing, revised, and unavailable data marked by the letters N, R, and U. It has 97 rows and 40 columns.
+
+## Required Packages
+
+1.  **readr/readxl**: for downloading the data sets which are in the format csv and excel
+2.  **purrr**: to work with loops required to download sqlite file
+3.  **RSQLite**: for downloading sqlite
+3.  **ggplot2**: for creating various plots and visuals
+4.  **dplyr**: for data manipulation and transformation
+5.  **tidyr**: for data tidying and preparation
+6.  **Metrics**: for evaluation of metrics for regression, time series, binary classifications, classifications, and information retrieval problems
+
+## Plots and Table Needs
+
+1.  Bar Charts
+2.  Histograms
+3.  Scatter Plots
+4.  Box plots
+
+## Questions for future steps
+
+In the future, I aim to expand my research to include motorcycle accidents outside of California. My initial research focused on California due to the availability of comprehensive data. Future steps would include data collection from other states or countries and comparing them to the motorcycle accident patterns in California. By comparing analysis from other states, it would broaden the scope of the research that may support or enhance the findings in this paper.
+
+# Step 2
+
+## How to import and clean my data
+In this section, the data sets are referred to by their title acronyms:
+
+**Dataset 1**: California Traffic Collision Data (CTCD)
+
+**Dataset 2**: Road Traffic Data (RTD)
+
+**Dataset 3**: Transportation Accidents Data (TAD)
+
+### California Traffic Collision Data (CTCD)
+Importing and cleaning the CTCD was a challenging task, particularly because I had no prior experience with importing data from an SQLite file. To address this, I installed libraries such as RSQLite and purrr and explored the Kaggle site to find a suitable download method. Initially, my import process resulted in "NULL" tables. Through further investigation, I successfully imported and cleaned the dataset. This dataset is extensive, containing 9.42 million observations across its tables. It required significant memory management in RMarkdown.
+
+The CTCD consists of four data frames. I reviewed each frames to identify variables relevant to my research. The cleaning process involved the following steps:
+
+1. **Filtering Columns**: Selecting the desired columns for analysis. 
+2. **Joining Tables**: Merging the 'collision' and 'parties' tables using the 'case_id' column.
+3. **Handling Missing Values**: Identifying columns with missing values (NA) and deciding to replace all NA entries with "Unknown" to minimize the impact on the analysis.
+4. **Removing Duplicates**: Ensuring data integrity by removing duplicate rows.
+
+### Road Traffic Data (RTD)
+
+The first step in the process was downloading the file. This was accomplished using the 'read_excel' function from the 'readxl' library. I viewed the first few rows and retrieved a summary of the data. Next, I selected the columns of interest and checked for missing data in those specific columns. Omitting rows before selecting the desired data resulted in the loss of the entire dataset due to the presence of NA values in many columns that were unnecessary for the research topic.
+
+### Transportation Accidents Data (TAD)
+
+The dataset used in this study was sourced from the Traffic Accident Database. The TAD was provided in an Excel format, containing multiple sheets with different sections of data. For this analysis, the specific sheet titled '2-3' was utilized. The dataset was imported into R using the 'readxl' package, and the sheet titled '2-3' was specified during the import process. Upon reviewing the dataset I determined rows 26-97 unnecessary for analysis, therefore these rows were filtered out using the 'dplyr' package using the 'slice' function. The dataset used 'N' values when there was no applicable values.  These values were replaced with the 'mutate' function from the 'dplyr' package along with an 'ifelse' function to apply the transformation across all columns.  This was to ensure the missing data sets would not contribute to the data and skew the overall results.
+
+
+## What does the final data set look like?
+
+Due to larger data sets I was unable to render Rmarkdown in order to knit to pdf, therefore some images were provided.  The final data set are provided down below:
+
+```{r fig.align="left",  out.width = "100%", fig.cap="CTCD Final Data Set", echo=FALSE}
+knitr::include_graphics("C:/Users/samue/Documents/eula/DSC 520 Statistics for Data Science/screenshot for project 3.png")
+```
+
+```{r fig.align="left",  out.width = "100%", fig.cap="RTD Final Data Set", echo=FALSE}
+knitr::include_graphics("C:/Users/samue/Documents/eula/DSC 520 Statistics for Data Science/screenshot for project 2.png")
+```
+
+
+
+
+\newpage 
+
+### TAD 
+```{r}
+library(readxl)
+library(dplyr)
+
+# Load the dataset from the specific sheet '2-3'
+table_02_03 <- read_excel("~/eula/DSC 520 Statistics for Data Science/table_02_03_012324.xlsx", 
+                          sheet = "2-3")
+
+# Filter out rows 26 to 97:
+TransportationAccidents <- table_02_03 %>%
+  slice(-c(26:97))
+
+# Replace N as 0
+
+TransportationAccidents_clean <- TransportationAccidents %>%
+  mutate(across(everything(), ~ifelse(. == 'N', 0, .)))
+
+head(TransportationAccidents_clean)
+```
+
+### What information is not self-evident?
+
+Within each data file, there were numerous additional columns and rows that I chose not to utilize, as their values were challenging to decipher and did not contribute to my analysis. These data points often lacked clear labels or consistent formatting, making them difficult to interpret accurately. Despite these complications, the essential information required for my research was readily accessible and clearly presented. The variables of interest were well-documented and easy to understand, allowing me to effectively extract and analyze the relevant data for my study.
+
+### What are different ways you could look at this data?
+
+There are numerous ways to analyze the California Traffic Collision Data (CTCD), given the many variables in the dataset. These variables include weather conditions, the number of killed victims, the number of injured victims, the party count in the incident, road conditions, type of condition, the motor vehicle involved, lighting, collision severity, party sex, and party sobriety, and party age. The data can be examined using various methods, including basic statistics, comparative analysis, temporal patterns, correlation and relationships, categorical analysis, visualizations, and predictive modeling.
+
+### How do you plan to slice and dice the data?
+
+#### CTCD:
+This dataset provides various opportunities of answering my research questions. Here are a few ways:
+
+1. **Frequency of Deadly Motorcycle Accidents**
+To determine how often motorcycle accidents are deadly, I can use the killed_victims variable. Filter out the cases where motor_vehicle_involved is "Motorcycle". Then, calculate the proportion of these cases where killed_victims is greater than zero. This will give me the percentage of motorcycle accidents that result in fatalities.
+
+2. **Temporal Patterns of Motorcycle Accidents**
+Since my data sets don't say the time involved it may be possible to look at "weather", "road_conditions", and "lighting" to examine the distribution across different settings to search for peak situations with higher accident frequencies.
+
+3. **Gender Differences in Motorcycle Accident Rates**
+In order to compare accident rates between male and female motorcyclists I could filter the data sets where motor_vehicle_involved = "motorcycle", then group the data by the party_sex (m/f/unknown).  I could then compare the rates of accidents between the two.
+
+
+#### RTD: 
+
+To compare motorcycle accidents with other road accidents involving different modes of transport, I could perform two analytical approaches:
+
+1. **Bar Plot of Fatalities and Injuries by Mode**: I would create visuals of the data using a bar plot to display the number of fatalities and injuries associated with each mode of transportation. 
+
+Below is an example of the code I could utilize with the ggplot2 package:
+
+**Bar plot of fatalities by mode**:
+library(ggplot2)
+ggplot(Filtered_Killed, aes(x=mode, y=injuries, fill=severity)) +
+  geom_bar(stat="identity") +
+  labs(title="Traffic Fatalities and Injuries by Mode",
+       x="Mode of Transportation",
+       y="Number of Injuries")
+       
+This plot would illustrate the distribution of injuries and fatalities across different modes, providing a clear visual comparison of motorcycle accidents with other transportation modes.
+
+2. **Proportional Analysis of Fatal Motorcycle Accidents**: To assess the fatality rate specifically for motorcycle accidents, I would calculate the proportion of fatal accidents within the motorcycle category. This would involve filtering out only the killed accidents, determining their proportion relative to the total number of motorcycle accidents, and comparing this rate with the fatality rates of other modes. This approach allows for a detailed examination of how deadly motorcycle accidents are relative to other types of road accidents.  
+
+#### TAD:
+
+This data set can be used to summarize the total crashes on the US National Highway System. It provides insight into how motorcycle crashes compare to those involving other modes of transportation. Unlike the RTD, the TAD offers a broader perspective on national crash statistics, allowing for comparisons between the entire country and California. Since the dataset spans from 1988 to 2022, analyzing trends over the years is also an option.
+
+
+### How could you summarize your data to answer key questions?
+To summarize the data effectively, we must first identify the key variables to focus on, which were determined during the cleaning and transformation process. As discussed earlier as well as further elaborated down below, there are various methods to address key questions. For instance, a logistic regression model can be particularly useful for summarizing the data, where the outcome variable is whether an individual was killed or not. This model can evaluate the influence of factors such as age, gender, and sobriety status by examining their coefficients, providing a comprehensive overview of how these variables impact the likelihood of fatal outcomes in crashes.
+
+
+### What types of plots and tables will help you to illustrate the findings to your questions?
+There are numerous ways to to help illustrate the findings to my research questions.  This includes:
+
+- plots that show fatal vs non-fatal motorcycle accidents
+- histograms of age distribution in motorcycle accidents
+- box plots comparing ages in fatal vs. non-fatal accidents
+- summary tables of accidents by age group, 
+- bar charts comparing male vs female accident counts,
+- bar charts comparing accident counts by mode of transport
+- analyze road conditions or type of conditions, and summarize lighting conditions that lead to  deadly accidents
+
+
+### Do you plan on incorporating any machine learning techniques to answer your research questions? Explain.
+Machine learning techniques can be implemented using the logistic regression model to assess how well the model distinguishes between fatal and non-fatal crashes. However, I am uncertain about the relevance of predicting accident severity in the context of prevention and safety measures.
+
+# Step 3
+
+## Introduction
+Motorcycle accidents result in significant fatalities and injuries annually, and over the past decade, the death rates associated with motorcycle incidents have risen considerably. Despite the implementation of various safety measures, the frequency of motorcycle accidents remains high. Understanding the underlying causes of these accidents is crucial for developing effective prevention strategies. This research aims to analyze patterns in motorcycle accidents and provide data-driven recommendations to enhance motorcycle safety.
+
+## The problem statement you addressed
+The primary problem addressed in this research is the high incidence of motorcycle accidents and the association to fatalities and injuries.  The goal is to identify what factors are contributing to accidents and propose solutions to enhance road safety for motorcyclist based on the findings.
+
+## How you addressed this problem statement
+To tackle this problem, three public data sets from Kaggle, Data.gov, and the Bureau of Transportation Statistics were accessed. The data sets included information on traffic collisions and injuries in California, the state with the highest number of motorcycle collision-related deaths annually, as well as data on nationally reported accidents. Variables such as road conditions, types of collisions, vehicle involvement, collision severity, lighting conditions, and the gender of the involved parties were examined. The methodology involved using descriptive statistics and visual presentations to compare fatal and non-fatal accidents across various variables and to assess how motorcycle accidents compared to those involving other modes of transportation.
+
+## Analysis
+
+Below is a summary of the findings from the analysis tailored to the 5 research questions:
+
+
+### Fatal Consequences of Motorcycle Accidents
+
+Diving into the analysis of the TCTD data which covers collisions from January 1st, 2001 until mid-December, 2020,  motorcycle accidents lead to fatalities approximately 3.2% of time, injuries 82.1% of the time, and no injuries 14.7% percent of the time.  
+
+### Temporal Patterns of Motorcycle Accideents.
+
+Contrary to what was expected, factors such as weather, lighting, and road conditions were not found to play a significant role in the occurrence of motorcycle accidents. 
+Most accidents happen during daylight, under normal lighting and normal road conditions. 
+
+```{r fig.align="left",  out.width = "100%", fig.cap="Distribution of Motorcycle Accidents by weather", echo=FALSE}
+knitr::include_graphics("C:/Users/samue/Documents/eula/DSC 520 Statistics for Data Science/road conditions according to weather.png")
+```
+
+
+```{r fig.align="left",  out.width = "100%", fig.cap="Distribution of Motorcycle Accidents By Lighting Conditions", echo=FALSE}
+knitr::include_graphics("C:/Users/samue/Documents/eula/DSC 520 Statistics for Data Science/distribution according to light conditions.png")
+```
+
+
+```{r fig.align="left",  out.width = "100%", fig.cap="Distribution of Motorcycle Accidents by Road Conditions", echo=FALSE}
+knitr::include_graphics("C:/Users/samue/Documents/eula/DSC 520 Statistics for Data Science/distribution based on road conditions.png")
+```
+\newpage 
+
+### Age Influence on Motorcycle Accidents
+The age distribution of individuals involved in motorcycle accidents shows that younger adults, particularly those in their early twenties to early thirties, are most frequently involved in accidents. The frequency of accidents declines gradually with age, with fewer incidents involving middle-aged and older individuals.
+```{r fig.align="left",  out.width = "100%", fig.cap="Age Distribution of Individuals Invovled in Motorcycle Accidents", echo=FALSE}
+knitr::include_graphics("C:/Users/samue/Documents/eula/DSC 520 Statistics for Data Science/age distribution2.png")
+```
+
+\newpage 
+
+### Gender Differences in Motorcycle Accident Rates
+The data revealed a significant gender disparity in motorcycle accidents, with males being involved in the vast majority of incidents. Female riders are involved in significantly fewer accidents. Notably, there were a number of accidents where the gender of the rider was unknown, which could suggest issues in data collection or reporting.
+
+
+```{r fig.align="left",  out.width = "100%", fig.cap="Distribution of Motorcycle Accidents by Gender", echo=FALSE}
+knitr::include_graphics("C:/Users/samue/Documents/eula/DSC 520 Statistics for Data Science/gender distribution.png")
+```
+
+\newpage
+
+### Motorcycle accidents compare to different modes of transport
+When compared to other modes of transport, motorcycle accidents resulted in a higher rate of injuries than accidents involving trucks,buses, or bicyclists but lower than those involving cars/pickups and pedestrians. Therefore, it was ranked third in the distribution of traffic injuries by mode.
+
+```{r fig.align="left",  out.width = "100%", fig.cap="Traffic Injuries by Mode", echo=FALSE}
+knitr::include_graphics("C:/Users/samue/Documents/eula/DSC 520 Statistics for Data Science/traffic injuries by mode.png")
+```
+
+
+## Implications
+
+The analysis of motorcycle accidents provides various insight into enhancing motorcycle safety and informing public policy:
+
+- **Policy Development**: The data indicates that younger riders, particularly those in their twenties and early thirties, are at a higher risk of being involved in motorcycle accidents. Policymakers should consider implementing targeted safety regulations and public awareness campaigns specifically aimed at this demographic. Initiatives such as mandatory advanced rider training for younger riders or targeted enforcement during peak accident times could be effective in reducing the accident rate among this group.
+
+- **Safety Measures**: The finding that accidents occur predominantly under normal weather, lighting, and road conditions suggests that standard road conditions may not be sufficient to prevent accidents. Enhanced safety measures, such as better signage, dedicated motorcycle lanes, and advanced rider assistance systems, could be explored. Additionally, educational programs emphasizing safe riding practices, especially in seemingly benign conditions, could be crucial.
+
+- **Data-Driven Interventions**: The comparison of motorcycle accidents with other modes of transport shows that while motorcycles have a lower overall injury rate the rate of injuries and fatalities is relatively high when it comes total motorcycle accidents. This suggests a need for specific interventions focused on reducing the severity of accidents when they do occur, such as promoting the use of protective gear, implementing stricter helmet laws, or developing advanced crash detection systems that can automatically summon emergency services.
+
+## Conclusion
+
+This research reveals important factors contributing to motorcycle accidents, offering valuable guidance for creating effective safety interventions that is data-driven. The high rate of accidents among younger riders signals a need for targeted educational efforts and more stringent licensing requirements, which could significantly lower the accident rate in this age group. Additionally, the prevalence of accidents under typical road conditions suggests that current safety measures might be insufficient, pointing to the need for improved infrastructure and more comprehensive rider training.
+
+The clear gender imbalance, with men being more frequently involved in accidents, highlights the necessity for safety campaigns tailored to the specific behaviors and risks of male riders. The large number of accidents with unknown gender also underscores the importance of better data collection and reporting practices to ensure a thorough understanding of accident patterns.
+
+In summary, the research calls for a multi-dimensional approach to motorcycle safety, combining targeted measures for high-risk groups, enhanced road safety infrastructure, and improved data management. Addressing these areas could lead to a significant reduction in motorcycle accidents and injuries. Future research should build on these insights by incorporating additional data and expanding the analysis to further strengthen motorcycle safety strategies. For example, future researchers could focus on comparing motorcycle safety measures across different states to pinpoint which strategies are most effective. By identifying successful interventions and adapting them for use in other regions, we could achieve fewer motorcycle accidents or lower the rate of injury and fatalities among motorcyclist. 
