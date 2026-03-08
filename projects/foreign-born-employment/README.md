@@ -1,13 +1,45 @@
 # Predicting Employment Status Among Foreign-Born Individuals
 
 ## Overview
-This project analyzes demographic and socioeconomic predictors of employment among foreign-born individuals in the United States.
+This project analyzes demographic and socioeconomic predictors of employment among foreign-born individuals in the United States using American Community Survey (ACS) data.
 
-## Data
-2024 American Community Survey (ACS) microdata accessed through IPUMS.
+## Dataset
+The dataset used was the **2024 ACS Public Use Microdata Sample (IPUMS)**.
+
+The analysis focused on foreign-born individuals aged 18–64.
+
+Key variables included:
+
+- Education level
+- English proficiency
+- Years in the United States
+- Sex
+- Age
+
+The outcome variable was **employment status during the survey reference week**.
 
 ## Methods
-Logistic regression models were used to estimate the probability of employment. Class-weighted models were also evaluated to address class imbalance.
+A logistic regression model was used to predict employment status.
 
-## Key Findings
-Education level and years in the United States were strong predictors of employment outcomes among foreign-born individuals.
+Two models were evaluated:
+
+- Baseline logistic regression
+- Class-weighted logistic regression to address class imbalance
+
+Model performance was evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+
+## Results
+The baseline model achieved strong overall accuracy but performed poorly identifying not-employed individuals. Applying class weights improved recall for the minority class.
+
+The strongest predictors of employment were:
+
+- Education level
+- Years in the United States
+
+## Tools
+Python, pandas, scikit-learn
