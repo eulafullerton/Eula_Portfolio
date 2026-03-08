@@ -1,72 +1,81 @@
-# Eula Fullerton  
-### Data Scientist | Predictive Modeling & Applied Analytics
+# Eula Fullerton
+### Data Scientist | Predictive Modeling | Healthcare & Public Policy Analytics
 
-I apply statistical modeling and machine learning to real-world datasets to uncover meaningful patterns, evaluate risk, and support data-driven decision making. My work often focuses on health and safety-related problems where careful interpretation and responsible analysis are essential.
+Applied data scientist with experience building predictive models, analyzing large public datasets, and translating complex analysis into actionable insights. My work focuses on healthcare, public safety, and policy-related analytics where data can support better decision-making and improved outcomes.
+
+---
+
+## Technical Skills
+
+**Programming:** Python, R  
+**Data Analysis:** pandas, NumPy, dplyr  
+**Machine Learning:** scikit-learn, XGBoost, Random Forest, Logistic Regression  
+**Data Visualization:** Matplotlib, Seaborn, ggplot2, Power BI  
+**Data Management:** SQL, SQLite, API integration  
+**Methods:** Predictive Modeling, Classification, Regression, Exploratory Data Analysis, Feature Engineering, Model Evaluation
 
 ---
 
 ## About
 
-I am a data science graduate student at Bellevue University and a Medical Laboratory Scientist with five years of experience in clinical environments. Working in high-impact healthcare settings has shaped my interest in using data to understand risk better, improve outcomes, and inform operational decision-making.
+I am a Medical Laboratory Scientist with five years of experience working in clinical environments and a graduate student in Data Science at Bellevue University. My background in healthcare has shaped my interest in using data to better understand health outcomes, public safety risks, and policy-related challenges.
 
-Through my academic and applied projects, I focus on predictive modeling, exploratory analysis, and ethical data integration. I am particularly interested in leveraging statistical methods and machine learning to address complex, real-world problems where data-driven insight can meaningfully improve outcomes.
-
-My portfolio reflects a strong emphasis on:
-
-- Predictive modeling (regression & classification)
-- Large-scale exploratory data analysis
-- Multi-source data integration
-- Risk and outcome modeling
-- Ethical data interpretation and bias awareness
-- Clear communication of analytical results
+Through my academic and independent projects, I apply machine learning, statistical analysis, and data visualization techniques to explore complex datasets and identify meaningful patterns. I am particularly interested in projects where predictive analytics can support real-world decision-making in healthcare, public health, and safety domains.
 
 ---
 
 ## Work / Projects
 
 ### Predicting NICU Length of Stay
-Regression modeling using Linear Regression, Gradient Boosting, and XGBoost to predict NICU length of stay from admission clinical data.
-
+Regression modeling using Linear Regression, Gradient Boosting, and XGBoost to predict neonatal intensive care unit length of stay from admission clinical data.  
 [View project →](projects/nicu-length-of-stay/)
 
-### Predicting Migraine Type from Symptoms
-Multi-class machine learning classification using Logistic Regression, Random Forest, and XGBoost with SMOTE to handle class imbalance.
+---
 
+### Predicting Migraine Type from Symptoms
+Multi-class machine learning classification of seven migraine types using patient characteristics and neurological symptoms. Models evaluated include Logistic Regression, Random Forest, and XGBoost with SMOTE used to address class imbalance.  
 [View project →](projects/predicting-migraine-type/)
 
-### Maternal Health Risk Prediction
-Classification models predicting pregnancy risk levels using physiological indicators such as blood glucose, blood pressure, and maternal age.
+---
 
+### Maternal Health Risk Prediction
+Machine learning models predicting pregnancy risk levels using maternal health indicators such as blood glucose, blood pressure, maternal age, and body temperature.  
 [View project →](projects/maternal-health-risk-prediction/)
 
-### Predicting Employment Status Among Foreign-Born Individuals
-Logistic regression modeling using American Community Survey microdata to analyze demographic predictors of employment.
+---
 
+### Predicting Employment Status Among Foreign-Born Individuals
+Logistic regression modeling using American Community Survey microdata to examine demographic and socioeconomic predictors of employment outcomes.  
 [View project →](projects/foreign-born-employment/)
 
-### Motorcycle Accident Risk Analysis
-Large-scale traffic collision analysis using multi-source datasets to examine demographic and environmental risk factors for motorcycle accidents.
+---
 
+### Motorcycle Accident Risk Analysis (California)
+Large-scale traffic collision analysis using multiple public datasets to identify demographic and environmental risk factors associated with motorcycle accident severity.  
 [View project →](projects/motorcycle-accident-risk-analysis/)
 
-### Global Mental Health Disorder Trends
-Statistical and distribution analysis comparing mental health disorder prevalence across countries.
+---
 
+### Global Mental Health Disorder Trends
+Statistical analysis comparing mental health disorder prevalence across countries to examine variability and potential patterns in global mental health outcomes.  
 [View project →](projects/mental-health-disorder-trends/)
 
-### Childcare Cost Burden on Single Mothers
-Power BI dashboard and policy analysis examining childcare affordability relative to income across U.S. counties.
+---
 
+### Childcare Cost Burden on Single Mothers
+Policy-focused analysis examining childcare affordability relative to household income across U.S. counties, presented through a Power BI dashboard and data visualizations.  
 [View project →](projects/childcare-cost-burden/)
 
-### Maternal Drug Exposure & Pregnancy Outcomes
-Data integration project combining CDC natality data and OpenFDA API data to analyze medication exposure patterns during pregnancy.
+---
 
+### Maternal Drug Exposure & Pregnancy Outcomes
+Data integration project combining CDC natality data with OpenFDA drug information to analyze patterns of medication exposure during pregnancy.  
 [View project →](projects/maternal-drug-exposure/)
 
-### TSA Complaint Data Analysis
-Exploratory data analysis and visualization identifying patterns in passenger complaints submitted to the Transportation Security Administration.
+---
 
+### TSA Passenger Complaint Analysis
+Exploratory data analysis of TSA passenger complaint data identifying trends across complaint categories, locations, and time.  
 [View project →](projects/tsa-complaint-analysis/)
 
 ---
