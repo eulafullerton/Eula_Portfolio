@@ -74,12 +74,6 @@ Data integration project combining CDC natality data with OpenFDA drug informati
 
 ---
 
-### TSA Passenger Complaint Analysis
-Exploratory data analysis of TSA passenger complaint data identifying trends across complaint categories, locations, and time.  
-[View project →](projects/tsa-complaint-analysis/)
-
----
-
 ## Contact
 
 GitHub: https://github.com/eulafullerton  
