@@ -1,21 +1,20 @@
 # Global Disaster Preparedness: Predictive Modeling
 
+**Skills:** Predictive Modeling | Disaster Data Analysis | Exploratory Analysis | Visualization
+
 ## Overview
-This project analyzes global disaster data to estimate disaster severity and forecast potential human and economic losses. The goal is to explore whether historical disaster characteristics can be used to support preparedness planning.
+This project analyzes global disaster data to estimate disaster severity and potential human and economic impacts. The goal is to explore whether historical disaster characteristics can support disaster preparedness planning.
 
 ## Dataset
-Historical global disaster data including:
+Historical disaster datasets containing information about:
 
 - Disaster type
 - Location
 - Fatalities
-- Economic damage
+- Economic losses
 
 ## Methods
-Exploratory analysis and predictive modeling techniques were used to evaluate relationships between disaster characteristics and outcomes.
+Exploratory data analysis and predictive modeling techniques were used to analyze patterns in disaster outcomes.
 
-## Results
-The analysis demonstrated that certain disaster characteristics consistently influence severity and economic impact, suggesting that predictive modeling may support disaster preparedness planning.
-
-## Tools
-Python, pandas, scikit-learn, matplotlib
+## Key Findings
+The analysis demonstrates that historical disaster characteristics can provide useful signals for estimating potential disaster severity and economic impacts.
