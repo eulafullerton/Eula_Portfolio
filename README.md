@@ -1,16 +1,30 @@
 # Eula Fullerton  
 ### Data Scientist | Predictive Modeling & Applied Analytics
 
-This repository supports my data science portfolio, showcasing applied projects in predictive modeling, machine learning, and exploratory data analysis. My work focuses on using real-world datasets to uncover meaningful patterns, evaluate risk, and support data-driven decision making.
+This repository contains the supporting materials for my data science portfolio, highlighting applied projects in predictive modeling, machine learning, and exploratory data analysis. My work focuses on using real-world datasets to uncover patterns, evaluate risk, and support data-driven decision making.
 
-Many of my projects explore complex public health and safety data, emphasizing responsible data integration, careful interpretation, and clear communication of analytical findings.
+Several projects explore complex healthcare, public safety, and policy-related datasets, emphasizing responsible data integration, careful interpretation, and clear communication of analytical findings.
 
 ---
 
 ## Live Portfolio
 
-View the full portfolio site here:  
+View the portfolio site here:  
 https://eulafullerton.github.io/Eula_Portfolio/
+
+---
+
+## Technical Focus
+
+Tools and methods demonstrated across projects include:
+
+- **Python** (pandas, NumPy, scikit-learn, XGBoost)
+- **R** (ggplot2, dplyr)
+- **Machine Learning** – regression, classification, ensemble models
+- **Exploratory Data Analysis**
+- **Feature Engineering and Model Evaluation**
+- **Power BI dashboards and data visualization**
+- **Multi-source data integration and public dataset analysis**
 
 ---
 
@@ -22,17 +36,6 @@ https://eulafullerton.github.io/Eula_Portfolio/
 
 ---
 
-## Areas of Focus
-
-- Predictive modeling (regression & classification)
-- Machine learning workflows and evaluation
-- Large-scale exploratory data analysis
-- Risk modeling and outcome analysis
-- Ethical data integration and bias awareness
-- Translating technical results into actionable insight
-
----
-
 ## About This Portfolio
 
-This portfolio highlights applied data science work developed through graduate study. Projects are structured to demonstrate both technical rigor and real-world relevance, with an emphasis on thoughtful problem framing and responsible interpretation of results.
+This portfolio highlights applied data science work developed through graduate study and independent analysis. Projects are structured to demonstrate both technical rigor and real-world relevance, with an emphasis on thoughtful problem framing and responsible interpretation of results.
