@@ -1,13 +1,3 @@
----
-title: "Final Project Step 2"
-author: "Eula Fullerton"
-date: "`r Sys.Date()`"
-output:
-  pdf_document: default
-  html_document: default
----
-
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
 ```
@@ -327,5 +317,6 @@ The analysis of motorcycle accidents provides various insight into enhancing mot
 This research reveals important factors contributing to motorcycle accidents, offering valuable guidance for creating effective safety interventions that is data-driven. The high rate of accidents among younger riders signals a need for targeted educational efforts and more stringent licensing requirements, which could significantly lower the accident rate in this age group. Additionally, the prevalence of accidents under typical road conditions suggests that current safety measures might be insufficient, pointing to the need for improved infrastructure and more comprehensive rider training.
 
 The clear gender imbalance, with men being more frequently involved in accidents, highlights the necessity for safety campaigns tailored to the specific behaviors and risks of male riders. The large number of accidents with unknown gender also underscores the importance of better data collection and reporting practices to ensure a thorough understanding of accident patterns.
+
 
 In summary, the research calls for a multi-dimensional approach to motorcycle safety, combining targeted measures for high-risk groups, enhanced road safety infrastructure, and improved data management. Addressing these areas could lead to a significant reduction in motorcycle accidents and injuries. Future research should build on these insights by incorporating additional data and expanding the analysis to further strengthen motorcycle safety strategies. For example, future researchers could focus on comparing motorcycle safety measures across different states to pinpoint which strategies are most effective. By identifying successful interventions and adapting them for use in other regions, we could achieve fewer motorcycle accidents or lower the rate of injury and fatalities among motorcyclist. 
