@@ -3,37 +3,45 @@
 **Skills:** Logistic Regression | Census Data Analysis | Feature Interpretation | Classification Modeling
 
 ## Overview
-Employment outcomes among foreign-born individuals vary due to differences in education, language ability, and time spent in the United States. This project analyzes demographic predictors of employment using American Community Survey data.
+This project analyzes demographic and socioeconomic predictors of employment among foreign-born individuals in the United States using American Community Survey (ACS) data.
 
 ## Dataset
-The analysis uses **2024 ACS Public Use Microdata (IPUMS)**.
+The dataset used was the **2024 ACS Public Use Microdata Sample (IPUMS)**.
 
-The dataset was filtered to include **foreign-born individuals aged 18-64**.
+The analysis focused on foreign-born individuals aged 18–64.
 
 Key variables included:
 
 - Education level
-- Years in the United States
 - English proficiency
-- Age
+- Years in the United States
 - Sex
+- Age
 
-The target variable was **employment status**.
+The outcome variable was **employment status during the survey reference week**.
 
 ## Methods
-Logistic regression models were used to predict employment status.
+A logistic regression model was used to predict employment status.
 
-Two models were compared:
+Two models were evaluated:
 
 - Baseline logistic regression
 - Class-weighted logistic regression to address class imbalance
 
-Evaluation metrics included:
+Model performance was evaluated using:
 
 - Accuracy
 - Precision
 - Recall
 - F1-score
 
-## Key Findings
-Education level and years in the United States were the strongest predictors of employment outcomes among foreign-born individuals.
+## Results
+The baseline model achieved strong overall accuracy but performed poorly identifying not-employed individuals. Applying class weights improved recall for the minority class.
+
+The strongest predictors of employment were:
+
+- Education level
+- Years in the United States
+
+## Tools
+Python, pandas, scikit-learn
