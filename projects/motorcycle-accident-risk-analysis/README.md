@@ -1,5 +1,7 @@
 # Motorcycle Accident Risk Analysis (California)
 
+**Skills:** Data Cleaning | Exploratory Data Analysis | Data Visualization | Large Dataset Processing | SQL/SQLite | Statistical Analysis | R (dplyr, ggplot2)
+
 ## Overview
 Motorcycle accidents account for a significant portion of traffic injuries and fatalities each year. This project analyzes large-scale traffic collision data to identify demographic, environmental, and temporal patterns associated with motorcycle accidents. The goal is to uncover patterns that may inform safety interventions and policy improvements.
 
